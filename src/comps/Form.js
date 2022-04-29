@@ -16,16 +16,11 @@ const onChangeForm= (e)=>{setForm(e.target.value)}
   
   return (
     <div>
-
-<form>
-			<input class="new-todo" placeholder="What needs to be done?" autofocus>
-		</form>
-      
-        {/* <form >
+        <form >
           <input className='new-todo' value={form} placeholder="What needs to be done?" autoFocus 
           onChange={onChangeForm}/>
           <button onClick={onTodo} >Add</button>
-        </form> */}
+        </form>
 
 
     </div>
