@@ -7,7 +7,7 @@ import Footer from './comps/Footer'
 function App() {
   const [todos, setTodos]=useState([]);
   // console.log(Object.keys(todos));
-
+  console.log(todos);
   // const deleteToDo= 
   return (
     <div className='todoapp'>

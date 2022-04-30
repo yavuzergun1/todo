@@ -8,7 +8,7 @@ const onChangeForm= (e)=>{setForm(e.target.value)}
   const onTodo= (e)=>{
     e.preventDefault();
     setTodos([...todos, form])
-   
+  
     setForm('')
   }
 
