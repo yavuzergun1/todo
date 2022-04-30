@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
   return (
    
-        <footer className="footer">
+<footer className="footer">
 
 {/* <!-- This should be `0 items left` by default --> */}
 <span className="todo-count">

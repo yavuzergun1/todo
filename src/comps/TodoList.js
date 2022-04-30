@@ -1,48 +1,25 @@
 import React from 'react'
+import {useState} from 'react'
 
 function TodoList({todos}) {
-    
+ const [isCompleted, setIsCompleted]=useState(false)
+
+const listSit= (e)=> {(isCompleted== false ? setIsCompleted(true): setIsCompleted(false))}
   return (
-    <div>
+    <div className='main' >
         
-<ul>
+<input type="checkbox" className='toggle-all' /> <label htmlFor="toggle-all">Mark all as complete</label>
+<ul className='todo-list'>
     {todos.map((todo, index)=>(
-        <li key={index} id={index} >{todo} <button  >delete</button></li> 
-        
+      <li key={index} className={isCompleted ? 'completed' :'' } > 
+       <div className='view' > 
+        <input type="checkbox" className='toggle' onClick={listSit} />
+       <label > {todo} </label> 
+       <button className='destroy' ></button>
+        </div>
+      </li>
     ))}
 </ul>
-<section className="main">
-		<input className="toggle-all" type="checkbox"/>
-		<label for="toggle-all">
-			Mark all as complete
-		</label>
-
-		<ul className="todo-list">
-			<li className="completed">
-				<div className="view">
-					<input className="toggle" type="checkbox"/>
-					<label>Learn JavaScript</label>
-					<button className="destroy"></button>
-				</div>
-			</li>
-			<li>
-				<div className="view">
-					<input className="toggle" type="checkbox"/>
-					<label>Learn React</label>
-					<button className="destroy"></button>
-				</div>
-			</li>
-			<li>
-				<div className="view">
-					<input className="toggle" type="checkbox"/>
-					<label>Have a life!</label>
-					<button className="destroy"></button>
-				</div>
-			</li>
-		</ul>
-	</section>
-        
-
     </div>
   )
 }

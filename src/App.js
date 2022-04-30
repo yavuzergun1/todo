@@ -10,10 +10,8 @@ function App() {
 
   // const deleteToDo= 
   return (
-    <div>
-         <section className="todoapp"/>
-     
-        <h1> My todos</h1>
+    <div className='todoapp'>
+    
       <Form todos={todos} setTodos={setTodos} />
       <TodoList todos={todos}/>
       <Footer/>

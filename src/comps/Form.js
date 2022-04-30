@@ -16,11 +16,14 @@ const onChangeForm= (e)=>{setForm(e.target.value)}
   
   return (
     <div>
+      <header className='header'> 
+      <h1>todos</h1>
         <form >
           <input className='new-todo' value={form} placeholder="What needs to be done?" autoFocus 
           onChange={onChangeForm}/>
-          <button onClick={onTodo} >Add</button>
+          <button onClick={onTodo} ></button>
         </form>
+          </header>
 
 
     </div>
