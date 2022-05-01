@@ -19,8 +19,8 @@ function App() {
       <ul className="todo-list">
         {todos.map((todo) => (
           <TodoList
-          todo={todo}
           key={todo.id}
+          todo={todo}
           text={todo.text}
           todos={todos}
           setTodos={setTodos}
