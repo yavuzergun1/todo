@@ -11,8 +11,9 @@ const onChangeForm= (e)=>{setForm(e.target.value)}
       alert("Bir görev ekleyin")
       return false
     }
-    console.log(todos);
+    
     setTodos([...todos, {text:form, completed: false, id: Math.random()*1000},]);
+    // console.log(todos.id);
   
     setForm('')
   }
@@ -30,7 +31,8 @@ const onChangeForm= (e)=>{setForm(e.target.value)}
         </form>
           </header>
 
-
+         
+          
     </div>
   )
 }

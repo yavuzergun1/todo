@@ -12,11 +12,21 @@ function App() {
   return (
     <div className='todoapp'>
     
+      <input type="checkbox" className='toggle-all' /> <label htmlFor="toggle-all">Mark all as complete</label>
       <Form todos={todos} setTodos={setTodos} />
-      <TodoList todos={todos} setTodos={setTodos} />
-      <Footer/>
-
+      <ul className="todo-list">
+        {todos.map((todo) => (
+          <TodoList
+          todo={todo}
+          key={todo.id}
+          text={todo.text}
+          todos={todos}
+          setTodos={setTodos}
+          />
+          ))}
+      </ul>
        
+          <Footer/>
     </div>
   )
 }
