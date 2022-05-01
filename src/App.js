@@ -12,7 +12,9 @@ function App() {
   return (
     <div className='todoapp'>
     
-      <input type="checkbox" className='toggle-all' /> <label htmlFor="toggle-all">Mark all as complete</label>
+      <input type="checkbox" className='toggle-all' /> 
+      <label htmlFor="toggle-all">Mark all as complete</label>
+      
       <Form todos={todos} setTodos={setTodos} />
       <ul className="todo-list">
         {todos.map((todo) => (
