@@ -5,9 +5,14 @@ function Form({todos, setTodos}) {
 const[form, setForm]= useState('')
 const onChangeForm= (e)=>{setForm(e.target.value)}
 
-  const onTodo= (e)=>{
+  const onSubmitTodo= (e)=>{
     e.preventDefault();
-    setTodos([...todos, form])
+    if(form===""){
+      alert("Bir görev ekleyin")
+      return false
+    }
+    console.log(todos);
+    setTodos([...todos, {text:form, completed: false, id: Math.random()*1000},]);
   
     setForm('')
   }
@@ -21,7 +26,7 @@ const onChangeForm= (e)=>{setForm(e.target.value)}
         <form >
           <input className='new-todo' value={form} placeholder="What needs to be done?" autoFocus 
           onChange={onChangeForm}/>
-          <button onClick={onTodo} ></button>
+          <button onClick={onSubmitTodo} ></button>
         </form>
           </header>
 
