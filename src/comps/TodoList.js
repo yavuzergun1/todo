@@ -6,7 +6,9 @@ function TodoList({todos, setTodos, todo}) {
 const isCompleted= ()=>setTodos(todos.map(item=>
   (item.id === todo.id ? {...item, completed:!item.completed}:item)))
 
-  const deleteItem= ()=> setTodos(todos.filter(item=> item.id!==todo.id))
+const deleteItem= ()=> setTodos(todos.filter(item=> item.id!==todo.id))
+
+
 
   return (
     <div className='main' > 
@@ -20,6 +22,7 @@ const isCompleted= ()=>setTodos(todos.map(item=>
        <button className='destroy' onClick={deleteItem}></button>
         </div>
       </li>
+        
    
 
     </div>

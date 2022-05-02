@@ -7,15 +7,15 @@ import Footer from './comps/Footer'
 function App() {
   const [todos, setTodos]=useState([]);
   // console.log(Object.keys(todos));
-  console.log(todos);
+  // console.log(todos);
   // const deleteToDo= 
   return (
     <div className='todoapp'>
     
-      <input type="checkbox" className='toggle-all' /> 
-      <label htmlFor="toggle-all">Mark all as complete</label>
+      
       
       <Form todos={todos} setTodos={setTodos} />
+      
       <ul className="todo-list">
         {todos.map((todo) => (
           <TodoList
@@ -27,8 +27,13 @@ function App() {
           />
           ))}
       </ul>
-       
-          <Footer/>
+     
+          <Footer
+          
+          todos={todos}
+          setTodos={setTodos}
+          />
+          
     </div>
   )
 }

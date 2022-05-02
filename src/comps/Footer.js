@@ -1,13 +1,23 @@
 import React from 'react'
+import {useState} from 'react'
 
-function Footer() {
+function Footer({todos, setTodos}) {
+const unCompleted= todos.filter(todo=>todo.completed==false)
+
+const clearCompleted= (e)=>{
+    e.preventDefault()
+    setTodos(todos.filter(todo=>todo.completed==false))
+    console.log(unCompleted);
+}
+    
   return (
    
 <footer className="footer">
 
 {/* <!-- This should be `0 items left` by default --> */}
 <span className="todo-count">
-    <strong>2</strong>
+
+    <strong>{unCompleted.length} </strong>
     items left
 </span>
 
@@ -24,7 +34,7 @@ function Footer() {
 </ul>
 
 {/* <!-- Hidden if no completed items are left ↓ --> */}
-<button className="clear-completed">
+<button className="clear-completed" onClick={clearCompleted}>
     Clear completed
 </button>
 </footer>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from "react";
+import {useState} from "react";
 
 function Form({todos, setTodos}) {
 const[form, setForm]= useState('')
@@ -18,7 +18,7 @@ const onChangeForm= (e)=>{setForm(e.target.value)}
     setForm('')
   }
 
- 
+ const completeAll= ()=> setTodos({completed:true})
   
   return (
     <div>
@@ -27,11 +27,14 @@ const onChangeForm= (e)=>{setForm(e.target.value)}
         <form >
           <input className='new-todo' value={form} placeholder="What needs to be done?" autoFocus 
           onChange={onChangeForm}/>
-          <button onClick={onSubmitTodo} ></button>
+          <button onClick={onSubmitTodo}></button>
+        
         </form>
+   
           </header>
 
-         
+          <input type="checkbox" className='toggle-all' onSubmit={completeAll} /> 
+      <label htmlFor="toggle-all">Mark all as complete</label>
           
     </div>
   )
