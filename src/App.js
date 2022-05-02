@@ -7,7 +7,7 @@ import Footer from './comps/Footer'
 function App() {
   const [todos, setTodos]=useState([]);
   // console.log(Object.keys(todos));
-  // console.log(todos);
+  console.log(todos);
   // const deleteToDo= 
   return (
     <div className='todoapp'>
@@ -15,7 +15,7 @@ function App() {
       
       
       <Form todos={todos} setTodos={setTodos} />
-      
+
       <ul className="todo-list">
         {todos.map((todo) => (
           <TodoList

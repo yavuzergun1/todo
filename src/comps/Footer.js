@@ -9,6 +9,11 @@ const clearCompleted= (e)=>{
     setTodos(todos.filter(todo=>todo.completed==false))
     console.log(unCompleted);
 }
+
+const clearUncompleted=(e)=>{
+    e.preventDefault()
+    setTodos(todos.filter(todo=>todo.completed==true))
+}
     
   return (
    
@@ -29,7 +34,7 @@ const clearCompleted= (e)=>{
         <a>Active</a>
     </li>
     <li>
-        <a>Completed</a>
+        <a onClick={clearUncompleted}>Completed</a>
     </li>
 </ul>
 
