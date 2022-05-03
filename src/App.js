@@ -35,7 +35,7 @@ function App() {
     
       
       
-      <Form todos={todos} setTodos={setTodos} />
+      <Form todos={todos} setTodos={setTodos} todo={todos.todo}/>
 
       <ul className="todo-list">
         {filteredTodos.map((todo) => (
