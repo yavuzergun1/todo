@@ -15,14 +15,14 @@ const deleteItem= ()=> setTodos(todos.filter(item=> item.id!==todo.id))
 {/* <input type="checkbox" className='toggle-all' /> <label htmlFor="toggle-all">Mark all as complete</label> */}
 
       
-      <li key={todo.id} className={todo.completed ? 'completed':'' }> 
+      <li key={todo.id} className={todo.completed ? "completed": "" } style={{display:"block"} } > 
        <div className='view' > 
         <input type="checkbox" className='toggle' onClick={isCompleted}  />
        <label  > {todo.text} </label> 
        <button className='destroy' onClick={deleteItem}></button>
         </div>
       </li>
-        
+       
    
 
     </div>

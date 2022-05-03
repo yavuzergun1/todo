@@ -1,19 +1,21 @@
 import React from 'react'
 import {useState} from 'react'
 
-function Footer({todos, setTodos}) {
+function Footer({todos, setTodos, status, setStatus}) {
+
 const unCompleted= todos.filter(todo=>todo.completed==false)
 
 const clearCompleted= (e)=>{
     e.preventDefault()
     setTodos(todos.filter(todo=>todo.completed==false))
-    console.log(unCompleted);
+    }
+
+const clickStyle= (e)=> {
+    setStatus(e.target.id)
+    
 }
 
-const clearUncompleted=(e)=>{
-    e.preventDefault()
-    setTodos(todos.filter(todo=>todo.completed==true))
-}
+
     
   return (
    
@@ -28,13 +30,13 @@ const clearUncompleted=(e)=>{
 
 <ul className="filters">
     <li>
-        <a className="selected">All</a>
+        <a onClick={clickStyle} className={ (status==='all') ? 'selected' : '' } id="all">All</a>
     </li>
     <li>
-        <a>Active</a>
+        <a onClick={clickStyle} className={ (status==='active') ? 'selected' : '' } id='active'>Active</a>
     </li>
     <li>
-        <a onClick={clearUncompleted}>Completed</a>
+        <a onClick={clickStyle} className={ (status==='completed') ? 'selected' : '' }id="completed">Completed</a>
     </li>
 </ul>
 

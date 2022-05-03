@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import './App.css';
 import Form from "./comps/Form"
 import TodoList from './comps/TodoList';
@@ -6,9 +6,30 @@ import Footer from './comps/Footer'
 
 function App() {
   const [todos, setTodos]=useState([]);
+  const [status, setStatus]= useState('');
+  const [filteredTodos, setFilteredTodos]= useState([]);
   // console.log(Object.keys(todos));
-  console.log(todos);
+  console.log(status);
   // const deleteToDo= 
+
+  useEffect(() => {
+    const filterHandler = () => {
+    switch(status){
+      case 'completed':
+        setFilteredTodos(todos.filter(todo => todo.completed === true))
+        break;
+      case 'active':
+        setFilteredTodos(todos.filter(todo => todo.completed === false))
+        break;
+      default:
+        setFilteredTodos(todos)
+        break;
+    }
+  }
+
+    filterHandler()
+  }, [todos, status])
+
   return (
     <div className='todoapp'>
     
@@ -17,8 +38,9 @@ function App() {
       <Form todos={todos} setTodos={setTodos} />
 
       <ul className="todo-list">
-        {todos.map((todo) => (
+        {filteredTodos.map((todo) => (
           <TodoList
+          status={status}
           key={todo.id}
           todo={todo}
           text={todo.text}
@@ -29,7 +51,8 @@ function App() {
       </ul>
      
           <Footer
-          
+          status= {status}
+          setStatus={setStatus}
           todos={todos}
           setTodos={setTodos}
           />
