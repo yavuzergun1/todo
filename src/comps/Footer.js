@@ -4,6 +4,8 @@ import {useState} from 'react'
 function Footer({todos, setTodos, status, setStatus}) {
 
 const unCompleted= todos.filter(todo=>todo.completed==false)
+const completed= todos.filter(todo=>todo.completed==true)
+
 
 const clearCompleted= (e)=>{
     e.preventDefault()
@@ -41,7 +43,7 @@ const clickStyle= (e)=> {
 </ul>
 
 {/* <!-- Hidden if no completed items are left ↓ --> */}
-<button className="clear-completed" onClick={clearCompleted}>
+<button className={completed==0 ? "hidden": "clear-completed"}  onClick={clearCompleted}>
     Clear completed
 </button>
 </footer>

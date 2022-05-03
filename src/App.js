@@ -9,7 +9,7 @@ function App() {
   const [status, setStatus]= useState('');
   const [filteredTodos, setFilteredTodos]= useState([]);
   // console.log(Object.keys(todos));
-  console.log(status);
+  // console.log(status);
   // const deleteToDo= 
 
   useEffect(() => {

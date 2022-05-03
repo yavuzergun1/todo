@@ -1,5 +1,5 @@
 import React from 'react'
-import {useState} from 'react'
+
 
 function TodoList({todos, setTodos, todo}) {
 
@@ -12,10 +12,8 @@ const deleteItem= ()=> setTodos(todos.filter(item=> item.id!==todo.id))
 
   return (
     <div className='main' > 
-{/* <input type="checkbox" className='toggle-all' /> <label htmlFor="toggle-all">Mark all as complete</label> */}
-
       
-      <li key={todo.id} className={todo.completed ? "completed": "" } style={{display:"block"} } > 
+      <li key={todo.id} className={todo.completed ? "completed": "" } > 
        <div className='view' > 
         <input type="checkbox" className='toggle' onClick={isCompleted}  />
        <label  > {todo.text} </label> 

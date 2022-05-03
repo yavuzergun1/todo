@@ -327,6 +327,13 @@ html .clear-completed:active {
 	line-height: 20px;
 	text-decoration: none;
 	cursor: pointer;
+	scale: 0;
+}
+
+.clear-completed:active{
+	color:red;
+	transform: rotate();
+	scale: 2;
 }
 
 .clear-completed:hover {
